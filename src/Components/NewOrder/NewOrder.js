@@ -1,0 +1,14 @@
+/* eslint-disable eol-last */
+import React from 'react';
+
+class NewOrder extends React.Component {
+  render() {
+    return (
+      <div className="NewOrder col-4">
+        <h1>NewOrder</h1>
+      </div>
+    );
+  }
+}
+
+export default NewOrder;

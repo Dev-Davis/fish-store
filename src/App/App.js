@@ -4,6 +4,9 @@ import firebase from 'firebase/app';
 import Auth from '../Components/Auth/Auth';
 import Home from '../Components/Home/Home';
 import MyNavbar from '../Components/MyNavbar/MyNavbar';
+import Inventory from '../Components/Inventory/Inventory';
+import Orders from '../Components/Orders/Orders';
+import NewOrder from '../Components/NewOrder/NewOrder';
 
 import './App.scss';
 
@@ -43,6 +46,11 @@ class App extends React.Component {
       <div className="App">
         <MyNavbar authed={authed}/>
         {loadComponent()}
+        <div className="row">
+          <Inventory />
+          <NewOrder />
+          <Orders />
+        </div>
       </div>
     );
   }
