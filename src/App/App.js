@@ -1,16 +1,33 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
+
 import Auth from '../Components/Auth/Auth';
 import Home from '../Components/Home/Home';
 
-function App() {
-  return (
-    <div className="App">
-      <Auth />
-      <Home />
-    </div>
-  );
+import './App.scss';
+
+import fbConnection from '../helpers/data/connection';
+
+fbConnection();
+
+class App extends React.Component {
+  state = {
+    authed: false,
+  }
+
+  render() {
+    const loadComponent = () => {
+      if (this.state.authed) {
+        return <Home />;
+      }
+      return <Auth />;
+    };
+
+    return (
+      <div className="App">
+        {loadComponent()}
+      </div>
+    );
+  }
 }
 
 export default App;
