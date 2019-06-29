@@ -1,17 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // import fishShapes from '../../helpers/data/propz/fishShapes';
 
 import Fish from '../Fish/Fish';
 
 class Inventory extends React.Component {
-//  statis propTypes ] {
-
-  //  }
+  static propTypes = {
+    addFishToOrder: PropTypes.func.isRequired,
+  }
 
   render() {
     const fishComponents = this.props.fishes.map(fish => (
-      <Fish key={fish.id} fish={fish}/>
+      <Fish key={fish.id} fish={fish} addFishToOrder={this.props.addFishToOrder}/>
     ));
     return (
       <div className="Inventory">
