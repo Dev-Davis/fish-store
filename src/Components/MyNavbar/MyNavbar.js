@@ -8,7 +8,7 @@ import './MyNavbar.scss';
 
 class MyNavbar extends React.Component {
   static propTypes = {
-    authed: PropTypes.bool.isRequired,
+    authed: PropTypes.bool,
   }
 
   logMeOut = (e) => {
