@@ -1,6 +1,6 @@
 import React from 'react';
 
-import fishShapes from '../../helpers/data/propz/fishShapes';
+// import fishShapes from '../../helpers/data/propz/fishShapes';
 
 import Fish from '../Fish/Fish';
 

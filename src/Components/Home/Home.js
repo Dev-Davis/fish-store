@@ -17,18 +17,24 @@ class Home extends React.Component {
     fishes: [],
   }
 
-  componentDidMount() {
-    fishData.getFishes()
-      .then(fishes => this.setState({ fishes }))
-      .catch(err => console.error('could not get fishes', err));
-
+  getOrders = () => {
     ordersData.getMyOrders(firebase.auth().currentUser.uid)
       .then(orders => this.setState({ orders }))
       .catch(err => console.error('cannot get orders', err));
   }
 
+  componentDidMount() {
+    fishData.getFishes()
+      .then(fishes => this.setState({ fishes }))
+      .catch(err => console.error('could not get fishes', err));
+
+    this.getOrders();
+  }
+
   deleteOrder = (orderId) => {
-    console.error('you clicked a delete button', orderId);
+    ordersData.deleteOrder(orderId)
+      .then(() => this.getOrders())
+      .catch(err => console.error('could not delete order', err));
   }
 
   render() {
