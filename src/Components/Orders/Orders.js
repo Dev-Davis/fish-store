@@ -1,6 +1,5 @@
 /* eslint-disable eol-last */
 import React from 'react';
-import 'firebase/auth';
 import PropTypes from 'prop-types';
 
 import orderShapes from '../../helpers/data/propz/orderShape';

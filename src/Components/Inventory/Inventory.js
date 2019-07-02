@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 // import fishShapes from '../../helpers/data/propz/fishShapes';
 
 import Fish from '../Fish/Fish';
+import fishShapes from '../../helpers/data/propz/fishShapes';
 
 class Inventory extends React.Component {
   static propTypes = {
+    fishes: PropTypes.arrayOf(fishShapes.fishShape),
     addFishToOrder: PropTypes.func.isRequired,
   }
 
